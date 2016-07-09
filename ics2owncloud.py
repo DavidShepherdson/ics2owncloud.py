@@ -38,7 +38,7 @@ def do_import(username, password, calendar, server, ics_url):
     sourceFile.close()
   else:
     sourceRequest = requests.get(ics_url)
-    #sourceRequest.encoding = 'utf-8'
+    sourceRequest.encoding = 'utf-8'
     sourceContent = sourceRequest.text
     
   c = Calendar.from_ical(sourceContent)
